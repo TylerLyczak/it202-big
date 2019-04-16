@@ -1,0 +1,16 @@
+html, body  {
+  background-color: #323639;
+}
+
+.white  {
+  color: white;
+}
+
+.italics  {
+  font-style: italic;
+}
+
+#dogImage {
+  max-width: 800px;
+  max-height: 800px;
+}

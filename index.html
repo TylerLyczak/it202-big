@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-Purpose</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Navbar for the website --->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<a class="navbar-brand" href="#mainPage">Multi-Purpose</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#dogPicture">Dog Picture/Video<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mapScreen">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#listScreen">List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutScreen">About</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+    <!-- Main page div -->
+    <div class="firstPage" id="mainPage">
+      <div class="ui inverted segment">
+        <h1 class="italics">Multi-Purpose</h1>
+        <p>This site shows different free APIs to use and how to call them</p>
+        <p>On the navbar, click any that interest you!</p>
+      </div>
+    </div>
+
+    <!-- The rest of the divs are hidden by the class "content" untill they
+          are clicked on by the navbar --->
+    <div class="content" id="dogPicture">
+      <div class="ui inverted segment">
+        <h1 class="italics">Dog Picture/Video</h1>
+      </div>
+      <div class="ui inverted segment">
+        <button id="requestDog">Request Dog Picture/Video</button>
+      </div>
+      <div class="ui inverted segment">
+        <img id="dogImage" src="">
+        <video id="dogVideo" width="800" height="800" controls>
+        </video>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
