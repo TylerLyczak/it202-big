@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   </head>
   <body>
 
@@ -28,7 +29,7 @@
           <a class="nav-link" href="#dictionaryScreen">Dictionary</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#listScreen">List</a>
+          <a class="nav-link" href="#crimeScreen">Crime Chart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#aboutScreen">About</a>
@@ -75,25 +76,50 @@
       </div>
     </div>
 
+    <!-- Crime Graph Screen that shows a graph of what the user wants --->
+    <div class="content" id="crimeScreen">
+      <div class="ui inverted segment">
+        <h1 class="italics">Crime Chart</h1>
+      </div>
+      <div class="ui inverted segment">
+        <p class="italics">Enter what you want to be charted</p>
+      </div>
+      <div class="ui inverted segment">
+        <div class="ui selection dropdown">
+          <input id="crimeWord" type="hidden" name="crimeDropdown">
+          <i class="dropdown icon"></i>
+          <div class="default text">Select Chart Type</div>
+          <div class="menu">
+            <div class="item" data-value="0">Number of Crimes</div>
+            <div class="item" data-value="1">Crimes in Ward</div>
+            <div class="item" data-value="2">Dates with Crimes</div>
+          </div>
+        </div>
+        <div class="ui input">
+          <input id="crimeNumber" type="number" placeholder="Enter a number...">
+        </div>
+        <button id="requestGraph">Submit</button>
+      </div>
+      <div class="ui inverted segment" id="chartContainerDiv">
+        <div id="chartContainer"></div>
+      </div>
+    </div>
+
     <!--- About Me screen that talks about the project --->
     <div class="content" id="aboutScreen">
       <div id="aboutMe">
-
         <div class="ui inverted segment">
           <h1 class="white">Multi-Purpose</h1>
         </div>
-
         <div class="ui inverted segment">
           <h2 class="italics">About this app</h3>
           <p>This app showcases multiple APIs and what information
               that can be got from them.</p>
         </div>
-
         <div class="ui inverted segment">
           <h2 class="italics">Developer</h2>
           <p>Developer of this app is Tyler Lyczak of University of Illinois at Chicago</p>
         </div>
-
         <div class="ui inverted segment">
           <h2 class="italics">Github</h2>
           <p>To see more of my projects, please come look at my Github</p>
