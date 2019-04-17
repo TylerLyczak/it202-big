@@ -39,6 +39,34 @@ function returnCorrectField (word)  {
   return field;
 }
 
+// Rounds a number to the nearest 10th in either direction
+function roundToNearestTen (int, dir)  {
+  var i = 0;
+  while (int%10 != 0) {
+    if (dir === "up") {
+      int++;
+    } else {
+      int--;
+    }
+    i++;
+  }
+  return int;
+}
+
+// Rounds a number to the nearest 10th in either direction
+function roundToNearestFive (int, dir)  {
+  var i = 0;
+  while (int%5 != 0) {
+    if (dir === "up") {
+      int++;
+    } else {
+      int--;
+    }
+    i++;
+  }
+  return int;
+}
+
 // Shows any navbar page
 $(".nav-link").on("click", function(){
   hideScreens();
@@ -66,6 +94,7 @@ $("#requestDictionary").on("click", function(){
   }
 });
 
+// Button listener that submutes the user inputed type of graph and the amount.
 $("#requestGraph").on("click", function(){
   var word = $("#crimeWord").val();
   var int = $("#crimeNumber").val();
@@ -75,57 +104,6 @@ $("#requestGraph").on("click", function(){
   }
 })
 
-function requestForCrime (field, int) {
-
-  $.get("https://data.cityofchicago.org/resource/6zsd-86xi.json?$limit=" + int,
-    function(response) {
-      console.log(response);
-      var dataPoints = [];
-
-      for (var i=0; i<response.length; i++) {
-        //console.log(response[i].case_number);
-        var found = false;
-        var labelType = response[i].primary_type;
-        for (var j=0; j<dataPoints.length; j++) {
-          if (dataPoints[j].label === labelType)  {
-            dataPoints[j].y++;
-            found = true;
-            break;
-          }
-        }
-
-        if (!found) {
-          dataPoints.push ({ y:1, label: labelType});
-          console.log("New label: " + labelType);
-        }
-      }
-      console.log(dataPoints.length);
-
-      var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-
-        title:{
-          text: "Crime in Chicago"
-        },
-        axisX:{
-          interval: 1
-        },
-        axisY2:{
-          interlacedColor: "rgba(1,77,101,.2)",
-      		gridColor: "rgba(1,77,101,.1)",
-      		title: "Number of Crimes"
-        },
-        data: [{
-          type: "bar",
-          name: "Types of Crime",
-          axisYType: "secondary",
-          color: "#014D65",
-          dataPoints: dataPoints
-        }]
-      });
-      chart.render();
-    });
-}
 
 // Makes a call to the api to get a dog picture/video
 function requestForDogPicture ()  {

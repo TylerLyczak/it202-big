@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
   </head>
   <body>
 
@@ -54,7 +55,7 @@
         <h1 class="italics">Dog Picture/Video</h1>
       </div>
       <div class="ui inverted segment">
-        <button id="requestDog">Request Dog Picture/Video</button>
+        <button id="requestDog" class="ui inverted button">Sumbit</button>
       </div>
       <div class="ui inverted segment">
         <img id="dogImage" src="">
@@ -69,8 +70,20 @@
         <h1 class="italics">Dictionary</h1>
       </div>
       <div class="ui inverted segment">
-        <input id="dictionaryWord" type="text" name="word">
-        <button id="requestDictionary">Submit</button>
+        <p class="italics">Enter a word that you want the definition for</p>
+      </div>
+      <div class="ui inverted segment">
+        <div class="ui inverted form">
+          <div class="two fields">
+            <div class="field">
+              <label>Enter a Word</label>
+              <div class="ui input">
+                <input id="dictionaryWord" type="text" placeholder="Enter a word...">
+              </div>
+            </div>
+          </div>
+          <button id="requestDictionary" class="ui inverted button">Sumbit</button>
+        </div>
       </div>
       <div id="dictionaryResponse" class="ui inverted segment">
       </div>
@@ -83,22 +96,34 @@
       </div>
       <div class="ui inverted segment">
         <p class="italics">Enter what you want to be charted</p>
+        <p class="italics">WARNING: Any number over 10,000 may take awhile, so be patient</p>
+        <p class="italics">WARNING: Any number over 8,000 for "Crime in Ward" will possibly crash</p>
       </div>
       <div class="ui inverted segment">
-        <div class="ui selection dropdown">
-          <input id="crimeWord" type="hidden" name="crimeDropdown">
-          <i class="dropdown icon"></i>
-          <div class="default text">Select Chart Type</div>
-          <div class="menu">
-            <div class="item" data-value="0">Number of Crimes</div>
-            <div class="item" data-value="1">Crimes in Ward</div>
-            <div class="item" data-value="2">Dates with Crimes</div>
+        <div class="ui inverted form">
+          <div class="two fields">
+            <div class="field">
+              <label>Chart Type</label>
+              <div class="ui selection dropdown">
+                <input id="crimeWord" type="hidden" name="crimeDropdown">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Chart Type</div>
+                <div class="menu">
+                  <div class="item" data-value="0">Number of Crimes</div>
+                  <div class="item" data-value="1">Crimes in Ward</div>
+                  <div class="item" data-value="2">Dates with Crimes</div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Number of Data Points</label>
+              <div class="ui input">
+                <input id="crimeNumber" type="number" placeholder="Enter a number...">
+              </div>
+            </div>
           </div>
+          <button id="requestGraph" class="ui inverted button">Sumbit</button>
         </div>
-        <div class="ui input">
-          <input id="crimeNumber" type="number" placeholder="Enter a number...">
-        </div>
-        <button id="requestGraph">Submit</button>
       </div>
       <div class="ui inverted segment" id="chartContainerDiv">
         <div id="chartContainer"></div>
@@ -131,5 +156,6 @@
 
 
     <script src="script.js"></script>
+    <script src="crime.js"></script>
   </body>
 </html>
