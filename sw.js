@@ -28,7 +28,6 @@ self.addEventListener('install', e => {
         '/it202-big/index.html',
         '/it202-big/styles',
         '/it202-big/manifest.json',
-        '/it202-big/sw.js',
         '/it202-big/styles/style.css',
         '/it202-big/styles/semantic.min.css',
         '/it202-big/scripts',
