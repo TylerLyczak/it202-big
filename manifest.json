@@ -4,8 +4,8 @@
   "theme_color": "#323639",
   "background_color": "#000000",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "/.index.html",
+  "Scope": "/it202-big/",
+  "start_url": "/it202-big/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

@@ -156,7 +156,7 @@ $(document).ready(function() {
   // register the service worker for offline use
    if('serviceWorker' in navigator) {
      navigator.serviceWorker
-              .register('./sw.js')
+              .register('/it202-big/sw.js', {scope: '/it202-big/'})
               .then(function() { console.log("Service Worker Registered"); });
    }
 });
