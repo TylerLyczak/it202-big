@@ -25,7 +25,28 @@ self.addEventListener('install', e => {
     caches.open(cacheName).then(cache => {
       return cache.addAll([
         './',
-        './index.html'
+        './index.html',
+        './styles',
+        './manifest.json',
+        './sw.js',
+        './styles/style.css',
+        './styles/semantic.min.css',
+        './scripts',
+        './scripts/crime.js',
+        './scripts/map.js',
+        './scripts/script.js',
+        './scripts/semantic.min.js',
+        './images',
+        './images/GitHub-Mark-Light-120px-plus.png',
+        './images/icons',
+        './images/icons/icon-72x72.png',
+        './images/icons/icon-96x96.png',
+        './images/icons/icon-128x128.png',
+        './images/icons/icon-144x144.png',
+        './images/icons/icon-152x152.png',
+        './images/icons/icon-192x192.png',
+        './images/icons/icon-384x384.png',
+        './images/icons/icon-512x512.png'
       ])
       .then(() => self.skipWaiting());
     })
