@@ -1,5 +1,3 @@
-console.log("Running3");
-
 // Hids all the divs with the class "content" from showing
 function hideScreens() {
   $(".content").hide();
@@ -94,7 +92,7 @@ $("#requestDictionary").on("click", function(){
   }
 });
 
-// Button listener that submutes the user inputed type of graph and the amount.
+// Button listener that submites the user inputed type of graph and the amount.
 $("#requestGraph").on("click", function(){
   var word = $("#crimeWord").val();
   var int = $("#crimeNumber").val();
@@ -104,6 +102,7 @@ $("#requestGraph").on("click", function(){
   }
 });
 
+// Button listener that will make the google maps render to the page
 $("#requestMap").on("click", function(){
   initMap();
 });
@@ -114,7 +113,6 @@ function requestForDogPicture ()  {
   $.get("https://random.dog/woof.json",
 
     function(response) {
-      console.log(response);
       var url = response.url;
       var urlSplit = url.split(".");
       var typeOfData = urlSplit[urlSplit.length-1];
@@ -138,7 +136,6 @@ function requestForWordDictionary(word) {
   $.get(url,
 
     function(response) {
-      console.log(response);
       var defs = response[0].shortdef;
       $("#dictionaryResponse").empty();
       for (var i=0; i<defs.length; i++) {

@@ -32,15 +32,9 @@ function requestForCrime (field, int) {
     axisY2Title = "Number of Crimes";
     dataName = "Types of Crime";
   }
-  console.log("int: " + int);
-  console.log("old: " + oldCalledSize);
-  console.log(typeof int);
-  console.log(typeof oldCalledSize);
-  console.log(typeof parseInt(int, 10));
   if (parseInt(int, 10) != parseInt(oldCalledSize, 10)) {
     $.get("https://data.cityofchicago.org/resource/6zsd-86xi.json?$limit=" + int,
       function(response) {
-        console.log(response);
         makeChartFromResponse(response, field, int, titleText, axisY2Title, dataName);
       });
   }
@@ -51,7 +45,6 @@ function requestForCrime (field, int) {
 
 function makeChartFromResponse(response, field, int, titleText, axisY2Title, dataName)  {
   var dataPoints = [];
-  //deleteDatabase();
   db.request.clear();
 
   for (var i=0; i<response.length; i++) {
@@ -114,7 +107,6 @@ function makeChartFromResponse(response, field, int, titleText, axisY2Title, dat
   chart.render();
   // Reloads the div containing the chart
   $("#chartContainerDiv").height($(".canvasjs-chart-canvas").height());
-  //console.log("Index: " + db.request.count().then (function(c){console.log(c)}));
   oldCalledSize = int;
 }
 
