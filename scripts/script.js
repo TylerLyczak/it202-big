@@ -1,4 +1,4 @@
-console.log("Running2");
+console.log("Running3");
 
 // Hids all the divs with the class "content" from showing
 function hideScreens() {
