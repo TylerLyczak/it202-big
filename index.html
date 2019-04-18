@@ -33,6 +33,9 @@
           <a class="nav-link" href="#crimeScreen">Crime Chart</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#mapScreen">Geolocation Map</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#aboutScreen">About</a>
         </li>
       </ul>
@@ -96,6 +99,9 @@
       </div>
       <div class="ui inverted segment">
         <p class="italics">Enter what you want to be charted</p>
+        <p class="italics">Stores all the data received into IndexDB</p>
+        <p class="italics">If you change the chart type with the same number of data points,
+          it will get the data from the IndexDB to make the chart, increasing the speed of the app</p>
         <p class="italics">WARNING: Any number over 10,000 may take awhile, so be patient</p>
         <p class="italics">WARNING: Any number over 8,000 for "Crime in Ward" will possibly crash</p>
       </div>
@@ -130,6 +136,22 @@
       </div>
     </div>
 
+    <!-- Geolocation Google maps that shows where the user is if given access --->
+    <div class="content" id="mapScreen" style="height:100%; width:100%;">
+      <div class="ui inverted segment">
+        <h1 class="italics">Geolocation Map</h1>
+      </div>
+      <div class="ui inverted segment">
+        <p class="italics">Request to see your location to put in onto the map</p>
+      </div>
+      <div class="ui inverted segment">
+        <button id="requestMap" class="ui inverted button">Open Map</button>
+      </div>
+      <div class="ui inverted segment black" style="height:100%; width:100%;">
+        <div class="black" id="map"></div>
+      </div>
+    </div>
+
     <!--- About Me screen that talks about the project --->
     <div class="content" id="aboutScreen">
       <div id="aboutMe">
@@ -157,5 +179,7 @@
 
     <script src="script.js"></script>
     <script src="crime.js"></script>
+    <script src="map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFR6xz40awZdqt1pvi6zxE6AquU-Nn-Yc"type="text/javascript"></script>
   </body>
 </html>

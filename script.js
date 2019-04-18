@@ -102,7 +102,11 @@ $("#requestGraph").on("click", function(){
   if (field !== "") {
     requestForCrime (field, int);
   }
-})
+});
+
+$("#requestMap").on("click", function(){
+  initMap();
+});
 
 
 // Makes a call to the api to get a dog picture/video

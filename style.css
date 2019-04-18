@@ -10,6 +10,10 @@ html, body  {
   font-style: italic;
 }
 
+.black  {
+  color: black;
+}
+
 #dogImage {
   max-width: 800px;
   max-height: 800px;
@@ -18,4 +22,8 @@ html, body  {
 #chartContainer {
   width: 100%;
   height: auto;
+}
+
+#map {
+  height: 100%;
 }
