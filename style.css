@@ -14,6 +14,11 @@ html, body  {
   color: black;
 }
 
+.mapDiv {
+  height:100%;
+  width:100%;
+}
+
 #dogImage {
   max-width: 800px;
   max-height: 800px;
