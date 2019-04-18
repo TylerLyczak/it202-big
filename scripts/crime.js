@@ -3,13 +3,9 @@ db.version(1).stores({
     request: 'id++, data_id, date, primary_type, ward'
 });
 
+// Declares ar variable to track the size of the database when the user reopens the website
 var oldCalledSize = 0;
 db.request.count().then( function(c){oldCalledSize = c;});
-
-async function deleteDatabase () {
-  let deleteCount = await db.request
-      .delete();
-}
 
 // Makes a call to an API that returns crime data
 // The field and int specifiy what to call from the API
@@ -43,6 +39,7 @@ function requestForCrime (field, int) {
   }
 }
 
+// Makes a chart from the response from the API
 function makeChartFromResponse(response, field, int, titleText, axisY2Title, dataName)  {
   var dataPoints = [];
   db.request.clear();
@@ -110,6 +107,7 @@ function makeChartFromResponse(response, field, int, titleText, axisY2Title, dat
   oldCalledSize = int;
 }
 
+// Makes a chart from the data in the IndexDB
 function makeChartFromIndex(field, int, titleText, axisY2Title, dataName)  {
   var dataPoints = [];
   db.request.each (data => {
@@ -138,17 +136,14 @@ function makeChartFromIndex(field, int, titleText, axisY2Title, dataName)  {
       if (dataPoints[j].label === labelType)  {
         dataPoints[j].y++;
         found = true;
-        console.log("found");
         break;
       }
     }
 
     if (!found) {
       dataPoints.push ({ y:1, label: labelType});
-      console.log("!found");
     }
   }).then(() => {
-    console.log(dataPoints.length);
     // Makes a chart with all the data received
     var chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
