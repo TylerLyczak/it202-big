@@ -3,7 +3,7 @@
   "short_name": "MP",
   "theme_color": "#323639",
   "background_color": "#000000",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
