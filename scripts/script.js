@@ -1,3 +1,4 @@
+
 // Hids all the divs with the class "content" from showing
 function hideScreens() {
   $(".content").hide();
