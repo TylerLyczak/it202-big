@@ -19,10 +19,6 @@ function hideVideos ()  {
   $("#dogVideo").hide();
 }
 
-$('.ui.dropdown')
-  .dropdown()
-;
-
 // Used to return the correct word for the crime api
 function returnCorrectField (word)  {
   var field = "";
@@ -87,19 +83,10 @@ $("#requestDog").on("click", function(){
 
 // Button listener that submits the user inputed word to the api function
 $("#requestDictionary").on("click", function(){
+  console.log("Clicked");
   var word = $("#dictionaryWord").val();
   if (word !== "")  {
     requestForWordDictionary(word);
-  }
-});
-
-// Button listener that submites the user inputed type of graph and the amount.
-$("#requestGraph").on("click", function(){
-  var word = $("#crimeWord").val();
-  var int = $("#crimeNumber").val();
-  var field = returnCorrectField(word);
-  if (field !== "") {
-    requestForCrime (field, int);
   }
 });
 

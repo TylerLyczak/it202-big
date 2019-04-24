@@ -7,6 +7,20 @@ db.version(1).stores({
 var oldCalledSize = 0;
 db.request.count().then( function(c){oldCalledSize = c;});
 
+// Button listener that submites the user inputed type of graph and the amount.
+$("#requestGraph").on("click", function(){
+  var word = $("#crimeWord").val();
+  var int = $("#crimeNumber").val();
+  var field = returnCorrectField(word);
+  if (field !== "") {
+    requestForCrime (field, int);
+  }
+});
+
+$('.ui.dropdown')
+  .dropdown()
+;
+
 // Makes a call to an API that returns crime data
 // The field and int specifiy what to call from the API
 function requestForCrime (field, int) {
