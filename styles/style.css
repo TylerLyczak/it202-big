@@ -32,3 +32,9 @@ html, body  {
 #map {
   height: 100%;
 }
+
+.mdc-button {
+  color: white;
+}
+
+$mdc-button: #000000;
