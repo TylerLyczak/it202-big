@@ -75,7 +75,7 @@ function loadDrawerNavigationElements(navItems) {
  * @param {string} screenName - name to load, without _
  */
 function loadScreen(screenName) {
-  $("#content").load("./screen-content/_" + screenName + ".html", function () {
+  $("#content").load("./it202-big/screen-content/_" + screenName + ".html", function () {
     console.log("------ Screen load: " + screenName);
 });
 
