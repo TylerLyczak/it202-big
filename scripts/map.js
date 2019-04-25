@@ -3,7 +3,6 @@ var map, infoWindow;
 
 // Button listener that will make the google maps render to the page
 $("#requestMap").on("click", function(){
-  console.log("Init map");
   initMap();
 });
 
