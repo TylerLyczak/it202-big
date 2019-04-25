@@ -7,6 +7,11 @@ Tyler Lyczak
 
 tlyczak2
 
+
+**[Link to planning doc](https://docs.google.com/document/d/1gWrJ66LanUh8SbFqFjAoLgabiaiu1Loin7mVgVUYHjI/edit?usp=sharing)**
+
+**[View Live Preview](https://tylerlyczak.github.io/it202-big/)**
+
 ## Big Project Checklist
 1. Includes at least 3 screens
   - Has 6 screens accessable from the nav-bar
@@ -33,8 +38,3 @@ tlyczak2
   - Since the service worker caches everything, it functions offline
 9. Installs on device (due to Web App Manifest)
   - includes a manifest and install on a device
-
-
-**[Link to planning doc](https://docs.google.com/document/d/1gWrJ66LanUh8SbFqFjAoLgabiaiu1Loin7mVgVUYHjI/edit?usp=sharing)**
-
-**[View Live Preview](https://tylerlyczak.github.io/it202-big/)**
