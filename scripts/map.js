@@ -1,6 +1,13 @@
 // Decalares the vars for the map and the info window
 var map, infoWindow;
 
+// Button listener that will make the google maps render to the page
+$("#requestMap").on("click", function(){
+  console.log("Init map");
+  initMap();
+});
+
+
 // Thos funciton will initialize the map in the div of the html file
 // Its intial spot is Chicago
 function initMap() {

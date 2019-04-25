@@ -1,4 +1,7 @@
 <!-- Geolocation Google maps that shows where the user is if given access --->
+<link rel="stylesheet" type="text/css" href="./styles/semantic.min.css">
+<link rel="stylesheet" href="./styles/style.css">
+
 <div class="content mapDiv" id="mapScreen">
   <div class="ui inverted segment">
     <h1 class="italics">Geolocation Map</h1>
@@ -10,6 +13,10 @@
     <button id="requestMap" class="ui inverted button">Open Map</button>
   </div>
   <div class="ui inverted segment black mapDiv">
-    <div class="black" id="map"></div>
   </div>
+  <div id="map"></div>
 </div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFR6xz40awZdqt1pvi6zxE6AquU-Nn-Yc" type="text/javascript"></script>
+<script src="./scripts/map.js"></script>
+<script src="./scripts/semantic.min.js"></script>

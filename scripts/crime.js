@@ -21,6 +21,49 @@ $('.ui.dropdown')
   .dropdown()
 ;
 
+// Used to return the correct word for the crime api
+function returnCorrectField (word)  {
+  var field = "";
+  if (word == 0) {
+    field = "primary_type";
+  }
+  else if (word == 1) {
+    field = "ward";
+  }
+  else if (word == 2)  {
+    field = "date";
+  }
+  return field;
+}
+
+// Rounds a number to the nearest 10th in either direction
+function roundToNearestTen (int, dir)  {
+  var i = 0;
+  while (int%10 != 0) {
+    if (dir === "up") {
+      int++;
+    } else {
+      int--;
+    }
+    i++;
+  }
+  return int;
+}
+
+// Rounds a number to the nearest 10th in either direction
+function roundToNearestFive (int, dir)  {
+  var i = 0;
+  while (int%5 != 0) {
+    if (dir === "up") {
+      int++;
+    } else {
+      int--;
+    }
+    i++;
+  }
+  return int;
+}
+
 // Makes a call to an API that returns crime data
 // The field and int specifiy what to call from the API
 function requestForCrime (field, int) {
