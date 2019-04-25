@@ -22,6 +22,12 @@ $('.ui.dropdown')
   .dropdown()
 ;
 
+//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+
+//import {MDCRipple} from '@material/ripple';
+
+//const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+
 // Used to return the correct word for the crime api
 function returnCorrectField (word)  {
   var field = "";
